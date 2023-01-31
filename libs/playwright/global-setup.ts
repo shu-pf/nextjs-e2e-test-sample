@@ -15,7 +15,7 @@ async function globalSetup() {
   );
   await page.click('button[type="submit"]');
 
-  await expect(page).toHaveTitle(/トップ/);
+  await expect(page.getByTestId("user-name")).toHaveText("sample@example.com");
 
   // Save signed-in state to 'storageState.json'.
   await page.context().storageState({ path: "generate/storageState.json" });

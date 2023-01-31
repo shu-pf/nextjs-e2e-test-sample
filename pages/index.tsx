@@ -14,7 +14,7 @@ export default function Home() {
       </Head>
       <main>
         <h1>トップ</h1>
-        <p>{user?.name}</p>
+        {user && <div data-testid="user-name">{user.name}</div>}
         <button onClick={() => logout()}>ログアウト</button>
       </main>
     </>
