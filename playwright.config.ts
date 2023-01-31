@@ -41,7 +41,7 @@ const config: PlaywrightTestConfig = {
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: "on-first-retry",
     // すべてのテストに 'storageState.json' からサインイン状態をロードするよう指示します。
-    storageState: "storageState.json",
+    storageState: "generate/storageState.json",
   },
 
   /* Configure projects for major browsers */

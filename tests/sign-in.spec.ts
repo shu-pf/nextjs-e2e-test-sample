@@ -1,6 +1,6 @@
 import { test, expect } from "@playwright/test";
 
-test.use({ storageState: "noAuthState.json" });
+test.use({ storageState: "generate/noAuthState.json" });
 
 test("has title", async ({ page }) => {
   await page.goto("http://localhost:3000/auth/sign-in");

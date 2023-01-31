@@ -3,7 +3,7 @@ import { chromium, expect } from "@playwright/test";
 async function globalSetup() {
   const browser = await chromium.launch();
   const page = await browser.newPage();
-  await page.context().storageState({ path: "noAuthState.json" });
+  await page.context().storageState({ path: "generate/noAuthState.json" });
 
   await page.goto("http://localhost:3000/auth/sign-in");
   await page.getByRole("button", { name: "サインイン" }).click();
@@ -18,7 +18,7 @@ async function globalSetup() {
   await expect(page).toHaveTitle(/トップ/);
 
   // Save signed-in state to 'storageState.json'.
-  await page.context().storageState({ path: "storageState.json" });
+  await page.context().storageState({ path: "generate/storageState.json" });
   await browser.close();
 }
 
