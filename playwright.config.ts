@@ -103,6 +103,7 @@ const config: PlaywrightTestConfig = {
   webServer: {
     command: "yarn dev",
     port: 3000,
+    reuseExistingServer: !process.env.CI,
   },
   globalSetup: require.resolve("./libs/playwright/global-setup"),
 };
